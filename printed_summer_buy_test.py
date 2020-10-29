@@ -14,7 +14,6 @@ def test_printed_summer_buy(driver):
     checkout_button_selector = (By.XPATH, "//a[@title='Proceed to checkout']")
     product_description_selector = (By.CSS_SELECTOR, ".cart_description > .product-name  > a")
 
-
     driver.find_element(*search_box_selector).send_keys("Printed Summer")
     driver.find_element(*submit_search_selector).click()
 
