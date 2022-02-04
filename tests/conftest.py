@@ -3,10 +3,8 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-
 @pytest.fixture()
 def driver(request):
-
     def close_driver():
         wd.quit()
 
@@ -17,4 +15,3 @@ def driver(request):
 
     request.addfinalizer(close_driver)
     return wd
-

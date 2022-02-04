@@ -15,8 +15,7 @@ class Tests:
         self.contact_us_page.enter_message("test message")
         self.contact_us_page.send_message()
         self.contact_us_page.check_success_message()
-    
-    
+
     def test_contact_us_no_email(self):
         self.home_page.go_to_contact_us()
         self.contact_us_page.select_subject("1")

@@ -1,5 +1,3 @@
-from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
@@ -7,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 def test_printed_summer_buy(driver):
+
     search_box_selector = (By.ID, "search_query_top")
     submit_search_selector = (By.NAME, "submit_search")
     product_container_selector = (By.CLASS_NAME, "product-container")
@@ -27,4 +26,3 @@ def test_printed_summer_buy(driver):
     product_description_element = driver.find_element(*product_description_selector).text
 
     assert "Printed Summer" in product_description_element
-
