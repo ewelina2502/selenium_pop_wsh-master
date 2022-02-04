@@ -4,11 +4,14 @@ from pages.contact_us import ContactUsPage
 
 class Tests:
 
-    def setup_method(self, driver):
+    # def setup_method(self, driver):
+    #     self.home_page = HomePage(driver)
+    #     self.contact_us_page = ContactUsPage(driver)
+
+    def test_contact_us(self, driver):
         self.home_page = HomePage(driver)
         self.contact_us_page = ContactUsPage(driver)
 
-    def test_contact_us(self):
         self.home_page.go_to_contact_us()
         self.contact_us_page.select_subject("1")
         self.contact_us_page.enter_email("seleniumwsh@gmail.com")
@@ -16,7 +19,10 @@ class Tests:
         self.contact_us_page.send_message()
         self.contact_us_page.check_success_message()
 
-    def test_contact_us_no_email(self):
+    def test_contact_us_no_email(self, driver):
+        self.home_page = HomePage(driver)
+        self.contact_us_page = ContactUsPage(driver)
+
         self.home_page.go_to_contact_us()
         self.contact_us_page.select_subject("1")
         self.contact_us_page.enter_message("test message")
